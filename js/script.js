@@ -121,7 +121,7 @@ const members = {
         stay_cost       :2300,
         garage_cost     :0,
         running_payable :3151,//2514
-        running_paid    :5000,
+        running_paid    :4000,
         running_meal    :6,
         // method calling
         depositDate: new Date("September 15, 2026").getDate(),
