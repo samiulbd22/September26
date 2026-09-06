@@ -62,5 +62,19 @@ function noticeBoard(a){
 let notice__me = document.getElementById("note__box");
 
 notice__me.innerHTML = noticeBoard(notices);
+let comments = {sami:"মেইন দরজার রেকে পায়ের জুতা রাখবেন।"};
+function commentsBox(comments){
+    let sum = '';
+    for(let i=0; i<Object.keys(comments).length; i++){
+        // console.log(Object.keys(comments))
+        sum = sum +`<tr style='font-size:12px'>
+                <td colspan="4" style='color:green'><strong>${Object.values(comments)[i]}</strong></td>
+                <td style='color:orange'><b>${Object.keys(comments)[i]}</b></td>
+        </tr>`;
+    }
+    return sum;
+}
+let comentItem = document.getElementById("commentMe");
+comentItem.innerHTML = commentsBox(comments);
 
 

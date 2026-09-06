@@ -93,13 +93,16 @@ const members = {
         post_payable        :2601,
         previous_paid       :3500,
         previous_dining_cost:1701,
-        payment             :undefined,
+        payment             :{"01/09/26-Cash":470},
         // running month
         stay_cost       :2000,
         garage_cost     :0,
-        running_payable :0,//2937
-        running_paid    :420,
-        running_meal    :3,
+        running_payable :0,//3512
+        running_paid    :470,
+        running_meal    :6,
+
+        //deposit date
+        //depositDate: new Date("September 1, 2026").getDate(),
         // method 
         preMonth,
         runningDiningCost,
@@ -113,14 +116,15 @@ const members = {
         post_payable        :2936,
         previous_paid       :5000,
         previous_dining_cost:2205,
-        payment             :undefined,
+        payment             :{"02/09/26-Cash":4000},
         // running month{"04/08/25-Cash":4550}
         stay_cost       :2300,
         garage_cost     :0,
-        running_payable :0,//2514
-        running_paid    :0,
-        running_meal    :3,
+        running_payable :3151,//2514
+        running_paid    :5000,
+        running_meal    :6,
         // method calling
+        depositDate: new Date("September 15, 2026").getDate(),
         preMonth,
         runningDiningCost,
         runningMonth,
@@ -159,7 +163,7 @@ const members = {
         garage_cost     :0,
         running_payable :0,//9050
         running_paid    :0,
-        running_meal    :6,
+        running_meal    :12,
         // method calling
         preMonth,
         runningDiningCost,
@@ -179,7 +183,7 @@ const members = {
         garage_cost     :0,
         running_payable :0,//4433
         running_paid    :0,
-        running_meal    :6,
+        running_meal    :12,
         // method calling
         preMonth,
         runningDiningCost,
@@ -200,7 +204,7 @@ const members = {
         garage_cost     :0,
         running_payable :0,
         running_paid    :0,
-        running_meal    :6,
+        running_meal    :12,
         // method calling
         preMonth,
         runningDiningCost,
@@ -214,14 +218,15 @@ const members = {
         post_payable        :3944,
         previous_paid       :5700,
         previous_dining_cost:1575,
-        payment             :undefined,
+        payment             :{"05/08/26-Cash":5000},
         // running month
         stay_cost       :3500,
         garage_cost     :0,
-        running_payable :0,//4359
-        running_paid    :0,
-        running_meal    :3,
+        running_payable :4029,//4359
+        running_paid    :5000,
+        running_meal    :6,
         // method calling
+        depositDate: new Date("September 17, 2026").getDate(),
         preMonth,
         runningDiningCost,
         runningMonth,
@@ -234,14 +239,15 @@ const members = {
         post_payable        :2615,
         previous_paid       :7500,
         previous_dining_cost:1575,
-        payment             :{"10/08/26-Cash":3000,"15/08/26-Cash":2500,"23/08/26-Cash":2000},
+        payment             :{"06/09/26-Cash":3000},
         // running month {"02/07/26-Cash":500}
         stay_cost       :3500,
         garage_cost     :0,
-        running_payable :0,//3488
-        running_paid    :0,
-        running_meal    :0,
+        running_payable :900,//3488
+        running_paid    :3000,
+        running_meal    :6,
         // method calling
+        depositDate: new Date("September 30, 2026").getDate(),
         preMonth,
         runningDiningCost,
         runningMonth,
@@ -261,7 +267,7 @@ const members = {
         garage_cost     :0,
         running_payable :0,//0
         running_paid    :0,
-        running_meal    :3,
+        running_meal    :6,
         // method calling
         preMonth,
         runningDiningCost,
@@ -274,8 +280,8 @@ const members = {
         
         // pre-previous month list
         post_payable        :0,
-        previous_paid       :3200,
-        previous_dining_cost:3200,
+        previous_paid       :0,
+        previous_dining_cost:0,
         payment             :undefined,
         // running month
         stay_cost       :0,
@@ -290,6 +296,7 @@ const members = {
         totalPayable
     },
 }
+
 const KhalaBill     = members.khalaBill;
 const netBill       = members.netBill;
 const serviceBill   = members.serviceBill;
@@ -370,6 +377,10 @@ let page5 = document.getElementById("page-5");
 let page6 = document.getElementById("page-6");
 let page7 = document.getElementById("page-7");
 let page8 = document.getElementById("page-8");
+
+let page9 = document.getElementById("page-9");
+let page10 = document.getElementById("page-10");
+
 let paymentChecker = document.getElementById("paymentChecker");
 let paymentPageOff = document.getElementById("paymentBtnOff");
 document.getElementById("user-btn").style.opacity = 0;
@@ -391,6 +402,11 @@ let backBtn4 = document.getElementById("back-4");
 let nextBtn5 = document.getElementById("next-5");
 
 let backBtn5 = document.getElementById("back-5");
+let nextBtn6 = document.getElementById("next-6");
+
+let backBtn6 = document.getElementById("back-6");
+let nextBtn7 = document.getElementById("next-7");
+nextBtn7.style.display = 'none';
 
 /*pagination*/ //paymentChecker
 /*page active and deactive*/
@@ -440,20 +456,31 @@ function secondPageOn(){
     page6.classList.add("hide-me");
     page7.classList.add("show-me");
     page7.classList.remove("hide-me");
-    page8.classList.remove("show-me");
-    page8.classList.add("hide-me")
- }
- backBtn4.addEventListener('click',sixthPageOn);
- nextBtn5.addEventListener('click',eighthPageOn)
- function eighthPageOn(){
-    page7.classList.remove("show-me");
-    page7.classList.add("hide-me");
-    page8.classList.add("show-me");
-    page8.classList.remove("hide-me");
+    page9.classList.remove("show-me");
+    page9.classList.add("hide-me");
     
  }
- backBtn5.addEventListener('click',seventhPageOn);
+ backBtn4.addEventListener('click',sixthPageOn);
+ nextBtn5.addEventListener('click',ninethPageOn);
+ function ninethPageOn(){
+    page7.classList.remove("show-me");
+    page7.classList.add("hide-me");
+    page9.classList.add("show-me");
+    page9.classList.remove("hide-me");
+    page10.classList.remove("show-me");
+    page10.classList.add("hide-me");
+    
+ }
  
+ backBtn5.addEventListener('click',seventhPageOn);
+ nextBtn6.addEventListener('click',tenthPageOn);
+ function tenthPageOn(){
+    page9.classList.remove("show-me");
+    page9.classList.add("hide-me");
+    page10.classList.add("show-me");
+    page10.classList.remove("hide-me");
+ }
+ backBtn6.addEventListener("click",ninethPageOn)
 /*page active and deactive*/
 /* payment page on */
 paymentChecker.addEventListener('click',paymentPageOn);
@@ -658,6 +685,7 @@ function opener(){
                 document.getElementById('dueRed').style.color = 'red';
             }
             /*running month*/ memberDiningList
+
             /*memberDiningList*/
             memberDiningList.innerHTML = `
                                             <tr>
@@ -745,12 +773,10 @@ function opener(){
                 }
             }
             /*memberDiningList*/
-            nextBtn5.style.display = 'none'
+            
          }else{
             if(memberNumber === '01710430501'){
                 page8.style.display = 'flex';
-                page7.classList.remove("show-me");
-                page7.classList.add("hide-me");
                 page1.classList.remove("show-me");
                 page1.classList.add("hide-me");
                 backBtn5.parentNode.parentNode.style.display = 'none'
@@ -852,5 +878,173 @@ function sumTotal(a){
 }
 
 
+dueScheduleCall()
+function dueScheduleCall(){
+    let text = '';
+    let timeCurrent = new Date().getDate()
+    let dueSchedule = document.getElementById("paymentSchedule");
+    //Razu
+    if(members["01922362569"].depositDate){
 
+        if(members['01922362569'].depositDate > timeCurrent){
+                            
+            text = text + `<tr>
+                <td style='font-size:10px'>${members["01922362569"].name}</td>
+                <td colspan="3"><strong>${members['01922362569'].depositDate-timeCurrent}</strong> <b style='font-size:12px'>দিন পর পরিশোধ করতে হবে</b></td>
+                <td><strong>${members["01922362569"].runningMonth().diningDue+500}</strong></td>
+            </tr>`;
+            
+        }else{
+                text = text + `<tr>
+                    <td style='font-size:10px'>${members["01922362569"].name}</td>
+                    <td colspan="3"> <strong>${members['01922362569'].depositDate-timeCurrent}</strong> <b style='color:red; font-size:12px'> দিন পরও  পরিশোধ হয় নি</b></td>
+                    <td><strong>${members["01922362569"].runningMonth().diningDue+500}</strong></td>
+                </tr>`;
+            }
+    }
+    //Habib
+    if(members["01797816501"].depositDate){
 
+        if(members['01797816501'].depositDate > timeCurrent){
+                            
+            text = text + `<tr>
+                <td style='font-size:10px'>${members["01797816501"].name}</td>
+                <td colspan="3"><strong>${members['01797816501'].depositDate-timeCurrent}</strong> <b style='font-size:12px'>দিন পর পরিশোধ করতে হবে</b></td>
+                <td><strong>${members["01797816501"].runningMonth().diningDue+500}</strong></td>
+            </tr>`;
+        }else{
+                text = text + `<tr>
+                    <td style='font-size:10px'>${members["01797816501"].name}</td>
+                    <td colspan="3"> <strong>${members['01797816501'].depositDate-timeCurrent}</strong> <b style='color:red; font-size:12px'> দিন পরও  পরিশোধ হয় নি</b></td>
+                    <td><strong>${members["01797816501"].runningMonth().diningDue+500}</strong></td>
+                </tr>`;
+            }
+    }
+    //Shahriar
+    if(members["01518924243"].depositDate){
+
+        if(members['01518924243'].depositDate > timeCurrent){
+                            
+            text = text + `<tr>
+                <td style='font-size:10px'>${members["01518924243"].name}</td>
+                <td colspan="3"><strong>${members['01518924243'].depositDate-timeCurrent}</strong> <b style='font-size:12px'>দিন পর পরিশোধ করতে হবে</b></td>
+                <td><strong>${members["01518924243"].runningMonth().diningDue+500}</strong></td>
+            </tr>`;
+        }else{
+                text = text + `<tr>
+                    <td style='font-size:10px'>${members["01518924243"].name}</td>
+                    <td colspan="3"> <strong>${members['01518924243'].depositDate-timeCurrent}</strong> <b style='color:red; font-size:12px'> দিন পরও  পরিশোধ হয় নি</b></td>
+                    <td><strong>${members["01518924243"].runningMonth().diningDue+500}</strong></td>
+                </tr>`;
+            }
+    }
+    //Rashed
+    if(members["01581515641"].depositDate){
+
+        if(members['01581515641'].depositDate > timeCurrent){
+                            
+            text = text + `<tr>
+                <td style='font-size:10px'>${members["01581515641"].name}</td>
+                <td colspan="3"><strong>${members['01581515641'].depositDate-timeCurrent}</strong> <b style='font-size:12px'>দিন পর পরিশোধ করতে হবে</b></td>
+                <td><strong>${members["01581515641"].runningMonth().diningDue+500}</strong></td>
+            </tr>`;
+        }else{
+                text = text + `<tr>
+                    <td style='font-size:10px'>${members["01581515641"].name}</td>
+                    <td colspan="3"> <strong>${members['01581515641'].depositDate-timeCurrent}</strong> <b style='color:red; font-size:12px'> দিন পরও  পরিশোধ হয় নি</b></td>
+                    <td><strong>${members["01581515641"].runningMonth().diningDue+500}</strong></td>
+                </tr>`;
+            }
+    }
+    //Ovi
+    if(members["01537664564"].depositDate){
+
+        if(members['01537664564'].depositDate > timeCurrent){
+                            
+            text = text + `<tr>
+                <td style='font-size:10px'>${members["01537664564"].name}</td>
+                <td colspan="3"><strong>${members['01537664564'].depositDate-timeCurrent}</strong> <b style='font-size:12px'>দিন পর পরিশোধ করতে হবে</b></td>
+                <td><strong>${members["01537664564"].runningMonth().diningDue+500}</strong></td>
+            </tr>`;
+        }else{
+                text = text + `<tr>
+                    <td style='font-size:10px'>${members["01537664564"].name}</td>
+                    <td colspan="3"> <strong>${members['01537664564'].depositDate-timeCurrent}</strong> <b style='color:red; font-size:12px'> দিন পরও  পরিশোধ হয় নি</b></td>
+                    <td><strong>${members["01537664564"].runningMonth().diningDue+500}</strong></td>
+                </tr>`;
+            }
+    }
+    //Milon
+    if(members["01953722448"].depositDate){
+
+        if(members['01953722448'].depositDate > timeCurrent){
+                            
+            text = text + `<tr>
+                <td style='font-size:10px'>${members["01953722448"].name}</td>
+                <td colspan="3"><strong>${members['01953722448'].depositDate-timeCurrent}</strong> <b style='font-size:12px'>দিন পর পরিশোধ করতে হবে</b></td>
+                <td><strong>${members["01953722448"].runningMonth().diningDue+500}</strong></td>
+            </tr>`;
+        }else{
+                text = text + `<tr>
+                    <td style='font-size:10px'>${members["01953722448"].name}</td>
+                    <td colspan="3"> <strong>${members['01953722448'].depositDate-timeCurrent}</strong> <b style='color:red; font-size:12px'> দিন পরও  পরিশোধ হয় নি</b></td>
+                    <td><strong>${members["01953722448"].runningMonth().diningDue+500}</strong></td>
+                </tr>`;
+            }
+    }
+    //Alamin
+    if(members["01934147404"].depositDate){
+
+        if(members['01934147404'].depositDate > timeCurrent){
+                            
+            text = text + `<tr>
+                <td style='font-size:10px'>${members["01934147404"].name}</td>
+                <td colspan="3"><strong>${members['01934147404'].depositDate-timeCurrent}</strong> <b style='font-size:12px'>দিন পর পরিশোধ করতে হবে</b></td>
+                <td><strong>${members["01934147404"].runningMonth().diningDue+500}</strong></td>
+            </tr>`;
+        }else{
+                text = text + `<tr>
+                    <td style='font-size:10px'>${members["01934147404"].name}</td>
+                    <td colspan="3"> <strong>${members['01934147404'].depositDate-timeCurrent}</strong> <b style='color:red; font-size:12px'> দিন পরও  পরিশোধ হয় নি</b></td>
+                    <td><strong>${members["01934147404"].runningMonth().diningDue+500}</strong></td>
+                </tr>`;
+            }
+    }
+    //Akib
+    if(members["01639523533"].depositDate){
+
+        if(members['01639523533'].depositDate > timeCurrent){
+                            
+            text = text + `<tr>
+                <td style='font-size:10px'>${members["01639523533"].name}</td>
+                <td colspan="3"><strong>${members['01639523533'].depositDate-timeCurrent}</strong> <b style='font-size:12px'>দিন পর পরিশোধ করতে হবে</b></td>
+                <td><strong>${members["01639523533"].runningMonth().diningDue+500}</strong></td>
+            </tr>`;
+        }else{
+                text = text + `<tr>
+                    <td style='font-size:10px'>${members["01639523533"].name}</td>
+                    <td colspan="3"> <strong>${members['01639523533'].depositDate-timeCurrent}</strong> <b style='color:red; font-size:12px'> দিন পরও  পরিশোধ হয় নি</b></td>
+                    <td><strong>${members["01639523533"].runningMonth().diningDue+500}</strong></td>
+                </tr>`;
+            }
+    }
+    //Mazed
+    if(members["01818334194"].depositDate){
+
+        if(members['01818334194'].depositDate > timeCurrent){
+                            
+            text = text + `<tr>
+                <td style='font-size:10px'>${members["01818334194"].name}</td>
+                <td colspan="3"><strong>${members['01818334194'].depositDate-timeCurrent}</strong> <b style='font-size:12px'>দিন পর পরিশোধ করতে হবে</b></td>
+                <td><strong>${members["01818334194"].runningMonth().diningDue+500}</strong></td>
+            </tr>`;
+        }else{
+                text = text + `<tr>
+                    <td style='font-size:10px'>${members["01818334194"].name}</td>
+                    <td colspan="3"> <strong>${members['01818334194'].depositDate-timeCurrent}</strong> <b style='color:red; font-size:12px'> দিন পরও  পরিশোধ হয় নি</b></td>
+                    <td><strong>${members["01818334194"].runningMonth().diningDue+500}</strong></td>
+                </tr>`;
+            }
+    }
+    return dueSchedule.innerHTML =  text;
+}
