@@ -137,15 +137,15 @@ const members = {
         post_payable        :4308,
         previous_paid       :5800,
         previous_dining_cost:2646,
-        payment             :undefined,
+        payment             :{"06/09/26-Cash":6000},
         // running month
         stay_cost       :3500,
         garage_cost     :0,
-        running_payable :0,//00
-        running_paid    :0,
+        running_payable :5364,//00
+        running_paid    :6000,
         running_meal    :2,
         // method calling
-		//depositDate: new Date("September 17, 2026").getDate(),
+		depositDate: new Date("September 17, 2026").getDate(),
         preMonth,
         runningDiningCost,
         runningMonth,
