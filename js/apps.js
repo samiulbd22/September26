@@ -62,7 +62,9 @@ function noticeBoard(a){
 let notice__me = document.getElementById("note__box");
 
 notice__me.innerHTML = noticeBoard(notices);
-let comments = {sami:"মেইন দরজার রেকে পায়ের জুতা রাখবেন।"};
+let comments = {sami:"মেইন দরজার রেকে পায়ের জুতা রাখবেন।",
+    Razu:"Bathroom ব্যবহারে অতিরিক্ত সময় নিবেন না, মানুষের সুবিধার কথা বিবেচনা করে ফ্রি সময়ে আপনার পারসোনাল কাজে bathroom সেরে নিন যাতে সবার জন্য ভালো হয়।"
+};
 function commentsBox(comments){
     let sum = '';
     for(let i=0; i<Object.keys(comments).length; i++){
