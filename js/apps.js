@@ -71,7 +71,7 @@ function commentsBox(comments){
         // console.log(Object.keys(comments))
         sum = sum +`<tr style='font-size:12px'>
                 <td colspan="4" style='color:green'><strong>${Object.values(comments)[i]}</strong></td>
-                <td style='color:orange'><b>${Object.keys(comments)[i]}</b></td>
+                <td style='color:red'><b>${Object.keys(comments)[i]}</b></td>
         </tr>`;
     }
     return sum;
