@@ -201,15 +201,15 @@ const members = {
         post_payable        :3739,
         previous_paid       :7200,
         previous_dining_cost:3540,
-        payment             :{"06/09/26-Cash":3000,"10/09/26-Cash":2000,"15:09/26-Cash":1000},
+        payment             :{"06/09/26-Cash":3000,"10/09/26-Cash":2000,"15:09/26-Cash":1000,"20:09/26-Cash":500},
         // running month
         stay_cost       :2800,
         garage_cost     :0,
         running_payable :3589,
-        running_paid    :6000,
+        running_paid    :6500,
         running_meal    :38,
         // method calling
-		depositDate: new Date("September 24, 2026").getDate(),
+		depositDate: new Date("September 30, 2026").getDate(),
         preMonth,
         runningDiningCost,
         runningMonth,
