@@ -122,7 +122,7 @@ const members = {
         garage_cost     :0,
         running_payable :3151,//2514
         running_paid    :5000,
-        running_meal    :24,
+        running_meal    :25,
         // method calling
         depositDate: new Date("September 30, 2026").getDate(),
         preMonth,
@@ -185,7 +185,7 @@ const members = {
         garage_cost     :0,
         running_payable :3913,//4433
         running_paid    :6500,
-        running_meal    :43,
+        running_meal    :45,
         // method calling
 		depositDate: new Date("September 24, 2026").getDate(),
         preMonth,
@@ -207,7 +207,7 @@ const members = {
         garage_cost     :0,
         running_payable :3589,
         running_paid    :6500,
-        running_meal    :42,
+        running_meal    :44,
         // method calling
 		depositDate: new Date("September 30, 2026").getDate(),
         preMonth,
@@ -228,7 +228,7 @@ const members = {
         garage_cost     :0,
         running_payable :4029,//4359
         running_paid    :6000,
-        running_meal    :22,
+        running_meal    :23,
         // method calling
         depositDate: new Date("September 30, 2026").getDate(),
         preMonth,
@@ -249,7 +249,7 @@ const members = {
         garage_cost     :0,
         running_payable :900,//3488
         running_paid    :3000,
-        running_meal    :28,
+        running_meal    :29,
         // method calling
         depositDate: new Date("September 30, 2026").getDate(),
         preMonth,
@@ -271,7 +271,7 @@ const members = {
         garage_cost     :0,
         running_payable :3018,//0
         running_paid    :5500,
-        running_meal    :19,
+        running_meal    :20,
         // method calling
 		depositDate: new Date("September 30, 2026").getDate(),
         preMonth,
@@ -293,7 +293,7 @@ const members = {
         garage_cost     :0,
         running_payable :0,
         running_paid    :3000,
-        running_meal    :44,
+        running_meal    :45,
         // method calling
         preMonth,
         runningDiningCost,
