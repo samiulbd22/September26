@@ -122,7 +122,7 @@ const members = {
         garage_cost     :0,
         running_payable :3151,//2514
         running_paid    :5000,
-        running_meal    :28,
+        running_meal    :29,
         // method calling
         depositDate: new Date("September 28, 2026").getDate(),
         preMonth,
@@ -143,7 +143,7 @@ const members = {
         garage_cost     :0,
         running_payable :5364,//00
         running_paid    :8500,
-        running_meal    :32,
+        running_meal    :34,
         // method calling
 		depositDate: new Date("September 30, 2026").getDate(),
         preMonth,
@@ -185,7 +185,7 @@ const members = {
         garage_cost     :0,
         running_payable :3913,//4433
         running_paid    :6500,
-        running_meal    :51,
+        running_meal    :53,
         // method calling
 		depositDate: new Date("September 24, 2026").getDate(),
         preMonth,
@@ -207,7 +207,7 @@ const members = {
         garage_cost     :0,
         running_payable :3589,
         running_paid    :6500,
-        running_meal    :50,
+        running_meal    :51,
         // method calling
 		depositDate: new Date("September 26, 2026").getDate(),
         preMonth,
@@ -228,7 +228,7 @@ const members = {
         garage_cost     :0,
         running_payable :4029,//4359
         running_paid    :6000,
-        running_meal    :26,
+        running_meal    :27,
         // method calling
         depositDate: new Date("September 30, 2026").getDate(),
         preMonth,
@@ -249,7 +249,7 @@ const members = {
         garage_cost     :0,
         running_payable :900,//3488
         running_paid    :3000,
-        running_meal    :32,
+        running_meal    :33,
         // method calling
         depositDate: new Date("September 30, 2026").getDate(),
         preMonth,
@@ -271,7 +271,7 @@ const members = {
         garage_cost     :0,
         running_payable :3018,//0
         running_paid    :6000,
-        running_meal    :23,
+        running_meal    :24,
         // method calling
 		depositDate: new Date("September 30, 2026").getDate(),
         preMonth,
